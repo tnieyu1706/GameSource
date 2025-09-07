@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 737786cf07cb8364184fe6d657e0565e, type: 3}
+  m_Name: apple
+  m_EditorClassIdentifier: 
+  itemTypeId: 0
+  itemTypeName: Apple
+  itemType: 0
+  categoryItem: {fileID: 11400000, guid: 0abe3b0286f2ece489c4e2a039c4b438, type: 2}
+  itemRarity: 0
+  icon: {fileID: 21300000, guid: c28d092610f609c43b20ca1f4447e1e0, type: 3}
+  description: 'A fresh and juicy apple. Restores a small amount of health and can
+    be used as an ingredient in cooking. Simple, common, but always useful on a journey. '
+  prefab: {fileID: 0}
+  canStack: 1
+  maxStackSize: 16
+  weight: 0
+  price: 2

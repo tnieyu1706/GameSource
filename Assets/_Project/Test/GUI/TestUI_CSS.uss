@@ -1,0 +1,30 @@
+.root {
+    justify-content: center;
+    align-items: flex-start;
+    width:auto;
+    height: auto;
+}
+
+.board {
+    background-color: yellow;
+    width: 40%;
+    height: 70%;
+    
+    flex-direction: row;   /* sắp xếp con theo hàng ngang */
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+.container1 {
+    background-color: lightblue;
+    flex-basis: 30%;   /* chiếm 30% chiều ngang */
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+
+.container2 {
+    background-color: lightgreen;
+    flex-basis: 40%;   /* chiếm 40% chiều ngang */
+    flex-grow: 0;
+    flex-shrink: 0;
+}

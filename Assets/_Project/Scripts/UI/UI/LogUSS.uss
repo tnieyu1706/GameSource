@@ -1,0 +1,29 @@
+.logSpawner {
+    position: absolute;
+    left: 40px;
+    top: 700px;
+    width: 10px;
+    height: 10px;
+    border-width: 1px;
+    border-color: chartreuse;
+}
+
+.logElement {
+    position: absolute;
+    height: 40px;
+    background-color: rgba(240, 255, 255, 0.4);
+    border-radius: 10px;
+    
+    display: flex;
+    justify-content: center;  /* căn ngang */
+    align-items: center;      /* căn dọc */
+
+    width: auto;          /* 👈 fit theo con */
+    flex-shrink: 0;       /* 👈 ko bị co lại khi layout ép */
+}
+
+.logText {
+    font-size: 20px;
+    -unity-font-style: bold;
+    color: #65570d;
+}

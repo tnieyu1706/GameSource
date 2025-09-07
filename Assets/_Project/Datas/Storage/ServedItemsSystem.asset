@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37044398b68e4854ab51646e86a6dd16, type: 3}
+  m_Name: ServedItemsSystem
+  m_EditorClassIdentifier: 
+  entity:
+    storageName: ServedItems
+    slotQuantity: 8
+    storageSlots:
+    - _itemData: {fileID: 0}
+      _quantity: 0
+    - _itemData: {fileID: 0}
+      _quantity: 0
+    - _itemData: {fileID: 11400000, guid: b41f3b4307e7a4240b46e679bff2092e, type: 2}
+      _quantity: 1
+    - _itemData: {fileID: 0}
+      _quantity: 0
+    - _itemData: {fileID: 0}
+      _quantity: 0
+    - _itemData: {fileID: 0}
+      _quantity: 0
+    - _itemData: {fileID: 0}
+      _quantity: 0
+    - _itemData: {fileID: 0}
+      _quantity: 0

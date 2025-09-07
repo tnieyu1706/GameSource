@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 227f809ae7934440a71b24d098185bc4, type: 3}
+  m_Name: Recipe_SoupCabbagePork_1
+  m_EditorClassIdentifier: 
+  recipeID: 6
+  name: 'Recipe_Stove_Cabbage Soup with Minced Pork_1 '
+  inputComponents:
+  - {fileID: 11400000, guid: b41c31e91d4c7a544a83b63020bd750d, type: 2}
+  - {fileID: 11400000, guid: 4da697456a4ec9243ad615e0010fbc8f, type: 2}
+  progressingType: 1
+  machineType: 2
+  outputComponent: {fileID: 11400000, guid: 14616e09049ff8544b8f21c8edb335f2, type: 2}
+  executeSecondTime: 16

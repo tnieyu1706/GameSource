@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 270e8e5d879146beb3cf5c610b2f4942, type: 3}
+  m_Name: GPUInstanceSpawnRunning_Woodland
+  m_EditorClassIdentifier: 
+  instances:
+  - {fileID: 11400000, guid: 9444d99207f51fa42a262c3cc691bc47, type: 2}
+  - {fileID: 11400000, guid: 3f6ecb1caa18e424e8af56d9e9bff278, type: 2}
+  - {fileID: 11400000, guid: 99145343e2b626141aa854c0e5591db8, type: 2}
+  spawnConfig: {fileID: 11400000, guid: 361931b5e0da5fa48a3abeada02455d4, type: 2}

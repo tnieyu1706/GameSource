@@ -1,0 +1,135 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4935728123315279315
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2586515767212144256}
+  - component: {fileID: 6572549995524294557}
+  - component: {fileID: 7882560754167383140}
+  - component: {fileID: 6976185053537076400}
+  - component: {fileID: 230726016091958702}
+  m_Layer: 0
+  m_Name: UIManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2586515767212144256
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4935728123315279315}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6572549995524294557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4935728123315279315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 19102, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PanelSettings: {fileID: 11400000, guid: df7303b9039b83b45bc57ccaa7725974, type: 2}
+  m_ParentUI: {fileID: 0}
+  sourceAsset: {fileID: 9197481963319205126, guid: ff47a83932e5cd4499abe22e2c0c9e8e, type: 3}
+  m_SortingOrder: 1
+  m_WorldSpaceSizeMode: 1
+  m_WorldSpaceWidth: 1920
+  m_WorldSpaceHeight: 1080
+--- !u!114 &7882560754167383140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4935728123315279315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1d03706ce2742f8b879c3b4dd7f506c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  styleSheet: {fileID: 7433441132597879392, guid: 38266258b2e14ba4faf7d5d6a0e98eaa, type: 3}
+--- !u!114 &6976185053537076400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4935728123315279315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce23256248da45c0a639c45c6ec2e00e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  displayDatas:
+  - displayObj: {fileID: 0}
+    displayMode: 0
+  - displayObj: {fileID: 0}
+    displayMode: 1
+  - displayObj: {fileID: 0}
+    displayMode: 2
+  inventoryObject: {fileID: 0}
+  uiDocument: {fileID: 6572549995524294557}
+  globalStyleSheet: {fileID: 7433441132597879392, guid: 38266258b2e14ba4faf7d5d6a0e98eaa, type: 3}
+  OnInitializeView:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7882560754167383140}
+        m_TargetAssemblyTypeName: _Project.Scripts.Storage.DragDropManager, Assembly-CSharp
+        m_MethodName: InitializeView
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 230726016091958702}
+        m_TargetAssemblyTypeName: _Project.Scripts.UI.UILog, Assembly-CSharp
+        m_MethodName: InitializeView
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &230726016091958702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4935728123315279315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8107ec03ac0d41328b9c13f3a3fb14de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  styleSheet: {fileID: 7433441132597879392, guid: 90bf847e8207ce14d91fb1d56c377a6b, type: 3}
+  capacity: 4
+  showSeconds: 0.5
+  delaySeconds: 2
+  verticalRand: {x: -40, y: 40}
