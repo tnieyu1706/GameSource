@@ -1,5 +1,6 @@
 using _Project.Scripts.General.Patterns.Singleton;
 using _Project.Scripts.InputSystem;
+using UnityEngine;
 
 namespace _Project.Scripts.Player
 {
@@ -7,6 +8,7 @@ namespace _Project.Scripts.Player
     {
         public InputUIReader inputUIReader;
         public InputGameplayReader inputGameplayReader;
+        public bool isShowLogDebug = true;
 
 
         protected override void Awake()
@@ -19,6 +21,7 @@ namespace _Project.Scripts.Player
         {
             inputGameplayReader.EnablePlayerActions();
             inputUIReader.EnablePlayerActions();
+            Debug.unityLogger.logEnabled = isShowLogDebug;
         }
     }
 }

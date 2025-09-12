@@ -60,20 +60,20 @@ namespace _Project.Scripts.Storage
             }
         }
 
-        private void OnEnable()
+        protected virtual void OnEnable()
         {
             StartCoroutine(SetupView());
 
             DragDropManager.Instance.DragViews.Add(this);
         }
 
-        IEnumerator SetupView()
+        protected virtual IEnumerator SetupView()
         {
             yield return OnStartView();
             yield return RegistrySlotsUI();
         }
 
-        void OnDisable()
+        protected virtual void OnDisable()
         {
             UnRegistrySlotsUI();
 

@@ -1,4 +1,5 @@
 using System;
+using _Project.Scripts.Utils;
 using UnityEngine.Serialization;
 
 namespace _Project.Scripts.Persistence
@@ -8,6 +9,5 @@ namespace _Project.Scripts.Persistence
     {
         public string Name;
         public string GameLevel;
-        [FormerlySerializedAs("basePersistenceData")] [FormerlySerializedAs("TestObjectPersistenceData")] public BaseGameObjectPersData baseGameObjectPersData;
     }
 }

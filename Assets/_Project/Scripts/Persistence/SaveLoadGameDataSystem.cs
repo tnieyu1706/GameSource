@@ -39,7 +39,7 @@ namespace _Project.Scripts.Persistence
 
         void DefaultBindings()
         {
-            Bind<TestObjectData, BaseGameObjectPersData>(gameData.baseGameObjectPersData);
+            // Bind<TestObjectData, BaseGameObjectPersData>(gameData.baseGameObjectPersData);
         }
 
         void Bind<TRuntime, TData>(TData data)

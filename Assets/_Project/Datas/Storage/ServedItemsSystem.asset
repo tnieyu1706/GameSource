@@ -18,12 +18,12 @@ MonoBehaviour:
     storageSlots:
     - _itemData: {fileID: 0}
       _quantity: 0
-    - _itemData: {fileID: 0}
-      _quantity: 0
+    - _itemData: {fileID: 11400000, guid: 79d71986e1479494d99cb0f4eb2a085c, type: 2}
+      _quantity: 11
     - _itemData: {fileID: 11400000, guid: b41f3b4307e7a4240b46e679bff2092e, type: 2}
-      _quantity: 1
-    - _itemData: {fileID: 0}
-      _quantity: 0
+      _quantity: 15
+    - _itemData: {fileID: 11400000, guid: 740f17f1fbaef3f4294e7d86a9dab150, type: 2}
+      _quantity: 4
     - _itemData: {fileID: 0}
       _quantity: 0
     - _itemData: {fileID: 0}

@@ -1,4 +1,4 @@
-using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using _Project.Scripts.Config;
@@ -8,17 +8,31 @@ using _Project.Scripts.Utils;
 using JetBrains.Annotations;
 using Sirenix.OdinInspector;
 using UnityEngine;
+using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
 namespace _Project.Scripts.PubService
 {
     public class PubServiceSystem : BehaviorSingleton<PubServiceSystem>
     {
-        public List<PubTableContext> pubTableContexts = new();
+        public List<PubChairContext> pubTableContexts = new();
 
         //Use persistence instead.
         [Required] [InlineEditor(InlineEditorObjectFieldModes.Boxed)] [NeedToSaveLoad]
         public StorageSO ServedItems;
+
+        public Vector2Int randomServedItemQuantity = new Vector2Int(1, 3);
+
+        [FormerlySerializedAs("maxRandomServedTypeItemCount")]
+        [FormerlySerializedAs("randomServedTypeItemCount")]
+        [Range(1, 2)]
+        public int maxRandomServedTypeItem;
+
+        public float pubServiceSecondsLimit = 60f;
+        [SerializeField] private float curPubServiceSeconds;
+        public float delayEachServingSeconds;
+        
+        private Coroutine pubServiceCoroutine;
 
         [UIShowLog]
         [CanBeNull]
@@ -36,7 +50,7 @@ namespace _Project.Scripts.PubService
             int servedRandom = Random.Range(0, availableServedItems.Count());
 
             StorageSlot slotInternal = availableServedItems.ElementAt(servedRandom);
-            int consumed = Random.Range(1, slotInternal.Quantity+1);
+            int consumed = (int)Random.Range(randomServedItemQuantity.x, randomServedItemQuantity.y);
 
             Debug.Log($"##Item: {slotInternal.ItemData.Name} - quantity: {consumed}");
 
@@ -48,7 +62,7 @@ namespace _Project.Scripts.PubService
         }
 
         [UIShowLog]
-        public void ServiceTable(PubTableContext pubTableContext, List<StorageSlot> items)
+        public void ServiceTable(PubChairContext pubChairContext, List<StorageSlot> items)
         {
             //check max
 
@@ -61,59 +75,86 @@ namespace _Project.Scripts.PubService
             float totalPrice = 0;
             for (int i = 0; i < items.Count; i++)
             {
-                StorageSlot slot = pubTableContext.OrderItems.StorageSlots[i];
+                StorageSlot slot = pubChairContext.OrderItems.StorageSlots[i];
                 StorageSlot servedSlot = items[i];
 
                 slot.SetValue(servedSlot.ItemData, servedSlot.Quantity);
                 totalPrice += servedSlot.ItemData.price * servedSlot.Quantity;
             }
 
-            pubTableContext.TotalOrderItemsPrice = totalPrice;
+            pubChairContext.TotalOrderItemsPrice = totalPrice;
 
-            pubTableContext.ChangeState(pubTableContext.PubTableStateHolder.orderState);
+            pubChairContext.ChangeState(pubChairContext.PubChairStateHolder.orderState);
 
 
             Debug.Log("Service Table");
         }
 
-        [FoldoutGroup("Test")] public int numberTable = 0;
-
-        [FoldoutGroup("Test")]
-        [Button("TableActivate")]
-        [UIShowLog]
-        private void TestTableActivate()
+        [Button]
+        public void OpenPubService()
         {
-            //lieu co con ko ?.
-            if (ServedItems.entity.IsStorageSlotsEmpty())
-            {
-                Debug.Log("ServedItems storage don't have any items.");
-                return;
-            }
-            
-            PubTableContext table = pubTableContexts[numberTable];
-            //check Idle ko thi moi set dc nua.
+            curPubServiceSeconds = pubServiceSecondsLimit;
+            pubServiceCoroutine = StartCoroutine(OnPubServiceExist());
+        }
 
-            if (table.CurrentState is not IdlePubTableState)
+        [Button]
+        public void ClosePubServiceEarly()
+        {
+            curPubServiceSeconds = 0;
+            if (pubServiceCoroutine != null)
+                StopCoroutine(pubServiceCoroutine);
+        }
+
+        public IEnumerator OnPubServiceExist()
+        {
+            while (!ServedItems.entity.IsStorageSlotsEmpty() && curPubServiceSeconds > 0)
             {
-                Debug.Log("current working - not idle!");
+                yield return SingletonFactory
+                    .GetInstance<WaitForSecondsServiceLocator>()
+                    .GetService(delayEachServingSeconds);
+                curPubServiceSeconds -= delayEachServingSeconds;
+
+                //Give item quantity available for chair
+                int itemServed = Mathf.Min(maxRandomServedTypeItem, ServedItems.entity.StorageSlots.Count);
+                var chairContexts =
+                    pubTableContexts
+                        .Where(c => c.CurrentState is IdlePubChairState)
+                        .ToList();
+                PubChairContext context = chairContexts[Random.Range(0, chairContexts.Count)];
+
+                if (context != null)
+                {
+                    GiveItemForTable(context, itemServed);
+                }
+                else
+                {
+                    Debug.Log($"No context.");
+                }
+            }
+        }
+
+        [UIShowLog]
+        private void GiveItemForTable(PubChairContext chairContext, int servedItemQuantity)
+        {
+            //double check
+            if (chairContext.CurrentState is not IdlePubChairState)
+            {
+                Debug.Log($"pub chair {chairContext.Name} state is not Idle!");
                 return;
             }
-            
-            //need to random more slot.
-            // int itemRandomNumber = Random.Range(1, GlobalConfigs.MaxTableSlot+1);
-            int itemRandomNumber = 2;
+
             List<StorageSlot> servedItems = new();
-            for (int i = 0; i < itemRandomNumber; i++)
+            for (int i = 0; i < servedItemQuantity; i++)
             {
                 StorageSlot slot = GetRandomServedItems();
-                
+
                 if (slot == null)
                     break;
-                
+
                 servedItems.Add(slot);
             }
 
-            ServiceTable(table, servedItems);
+            ServiceTable(chairContext, servedItems);
         }
     }
 }

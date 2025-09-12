@@ -16,28 +16,28 @@ MonoBehaviour:
     storageName: PlayerInventory
     slotQuantity: 40
     storageSlots:
-    - _itemData: {fileID: 0}
-      _quantity: 0
-    - _itemData: {fileID: 0}
-      _quantity: 0
-    - _itemData: {fileID: 11400000, guid: 79d71986e1479494d99cb0f4eb2a085c, type: 2}
-      _quantity: 12
-    - _itemData: {fileID: 11400000, guid: 6df60f85abcc83e46895bed296ea8d82, type: 2}
-      _quantity: 14
-    - _itemData: {fileID: 11400000, guid: 1aa37f197fd22434d80bd0b159a5a56b, type: 2}
+    - _itemData: {fileID: 11400000, guid: 371503b338f7e8242a7cbd1a98fe2a52, type: 2}
       _quantity: 13
-    - _itemData: {fileID: 11400000, guid: 1aa37f197fd22434d80bd0b159a5a56b, type: 2}
-      _quantity: 14
+    - _itemData: {fileID: 11400000, guid: b41f3b4307e7a4240b46e679bff2092e, type: 2}
+      _quantity: 17
+    - _itemData: {fileID: 11400000, guid: 14616e09049ff8544b8f21c8edb335f2, type: 2}
+      _quantity: 1
+    - _itemData: {fileID: 11400000, guid: bb1766a3f35e6c042bae85631fb5f5d9, type: 2}
+      _quantity: 2
+    - _itemData: {fileID: 0}
+      _quantity: 0
+    - _itemData: {fileID: 0}
+      _quantity: 0
     - _itemData: {fileID: 0}
       _quantity: 0
     - _itemData: {fileID: 11400000, guid: 84815308eaadf344cad0f88d14394f20, type: 2}
       _quantity: 14
-    - _itemData: {fileID: 11400000, guid: 47eecbff3cc89b44cafc31f2d1baa471, type: 2}
-      _quantity: 14
     - _itemData: {fileID: 11400000, guid: 9f123cfe4e5ef4e42a221fec980c5fd3, type: 2}
       _quantity: 14
-    - _itemData: {fileID: 11400000, guid: 740f17f1fbaef3f4294e7d86a9dab150, type: 2}
-      _quantity: 14
+    - _itemData: {fileID: 11400000, guid: 6df60f85abcc83e46895bed296ea8d82, type: 2}
+      _quantity: 6
+    - _itemData: {fileID: 0}
+      _quantity: 0
     - _itemData: {fileID: 0}
       _quantity: 0
     - _itemData: {fileID: 0}

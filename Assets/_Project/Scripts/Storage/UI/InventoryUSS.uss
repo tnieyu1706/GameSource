@@ -65,7 +65,7 @@ Label {
     align-items: flex-start;
 
     justify-content: center;
-    width: 490px; /* 8 slot + 7 gap */
+    width: 488px;
 
     /*max-height: 200px;*/
 }
