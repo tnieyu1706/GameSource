@@ -20,3 +20,4 @@ G:/GameDev/Engines/Unity/Game/My[[:space:]]project/Assets/Fristy[[:space:]]Fanta
 G:/GameDev/Engines/Unity/Game/My[[:space:]]project/Assets/Fristy[[:space:]]Fantasy[[:space:]]Lands[[:space:]]1/Fristy[[:space:]]Fantasy[[:space:]]Lands[[:space:]]1/Meshes/Plants/All[[:space:]]Plants[[:space:]]Atlas[[:space:]]NRM.psd filter=lfs diff=lfs merge=lfs -text
 G:/GameDev/Engines/Unity/Game/My[[:space:]]project/Assets/Fristy[[:space:]]Fantasy[[:space:]]Lands[[:space:]]1/Fristy[[:space:]]Fantasy[[:space:]]Lands[[:space:]]1/Meshes/Trees/Maps/Tree[[:space:]]main.psd filter=lfs diff=lfs merge=lfs -text
 G:/GameDev/Engines/Unity/Game/My[[:space:]]project/Assets/Fristy[[:space:]]Fantasy[[:space:]]Lands[[:space:]]1/Fristy[[:space:]]Fantasy[[:space:]]Lands[[:space:]]1/Meshes/Trees/Maps/Tree[[:space:]]main_Normal[[:space:]]2.psd filter=lfs diff=lfs merge=lfs -text
+*.unity filter=lfs diff=lfs merge=lfs -text
