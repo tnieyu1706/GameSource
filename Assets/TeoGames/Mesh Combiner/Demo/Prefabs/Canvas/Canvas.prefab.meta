@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: a0ef1890d54a0794a95b328bbe2527cf
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 256689
+  packageName: Dynamic Mesh Combiner Lite
+  packageVersion: 1.17-lite
+  assetPath: Assets/TeoGames/Mesh Combiner/Demo/Prefabs/Canvas/Canvas.prefab
+  uploadId: 634892

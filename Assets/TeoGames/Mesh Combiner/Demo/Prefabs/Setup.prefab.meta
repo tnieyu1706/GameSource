@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 7059fb6f5870ccc498e5abe6e9d8bf97
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 256689
+  packageName: Dynamic Mesh Combiner Lite
+  packageVersion: 1.17-lite
+  assetPath: Assets/TeoGames/Mesh Combiner/Demo/Prefabs/Setup.prefab
+  uploadId: 634892

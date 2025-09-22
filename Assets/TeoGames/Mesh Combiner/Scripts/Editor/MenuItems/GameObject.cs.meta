@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: f0ade86ed0ee48aeaec6e2dd3080fa12
+timeCreated: 1686000559
+AssetOrigin:
+  serializedVersion: 1
+  productId: 256689
+  packageName: Dynamic Mesh Combiner Lite
+  packageVersion: 1.17-lite
+  assetPath: Assets/TeoGames/Mesh Combiner/Scripts/Editor/MenuItems/GameObject.cs
+  uploadId: 634892

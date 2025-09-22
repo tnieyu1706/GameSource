@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: bb35945842e89c44cb41a1cc70680a75
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 256689
+  packageName: Dynamic Mesh Combiner Lite
+  packageVersion: 1.17-lite
+  assetPath: Assets/TeoGames/Mesh Combiner/Demo/Tests/2 - Split based on shadow cast
+    mode 1.unity
+  uploadId: 634892

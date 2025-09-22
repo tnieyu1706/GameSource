@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isInitialized: 0
   renderCount: 80
-  mesh: {fileID: -6731384971991040179, guid: e9f1a73da6688fe4499bfb7d3b04607a, type: 3}
+  mesh: {fileID: 0}
   materials:
   - {fileID: 2100000, guid: 12e6f59b9f8bd724ab641adabdb9f8b3, type: 2}
   matrices:
