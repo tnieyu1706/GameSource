@@ -198,6 +198,13 @@ namespace _Project.Scripts.PubService
         private Image clearIcon;
 
         #endregion
+        
+        #region UIInteract
+        
+        private const string ButtonTypeInteract = "E";
+        private const string ContentInteract = "Interact";
+        
+        #endregion
 
         void Awake()
         {
@@ -406,12 +413,16 @@ namespace _Project.Scripts.PubService
         {
             CurrentItemUser = interactor;
             CurrentState?.SubscribeInteraction();
+            
+            UIManager.Instance.TurnOnInteractInfo(ButtonTypeInteract, ContentInteract);
         }
 
         public void Unsubscribe(IItemUser interactor)
         {
             CurrentState?.UnsubscribeInteraction();
             CurrentItemUser = null;
+            
+            UIManager.Instance.TurnOffInteractInfo();
         }
     }
 }

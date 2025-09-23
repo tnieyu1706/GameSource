@@ -20,6 +20,26 @@ namespace _Project.Scripts.PubService
             closePubButton.clicked += HandleClosePubButtonClicked;
             yield return null;
         }
+        
+        protected override void OnPointerDown(PointerDownEvent evt, SlotElementUI slotUI)
+        {
+            if (evt.button == 0)
+            {
+                DragDropManager.IsDragging = true;
+                DragDropManager.OriginalSlot = slotUI;
+
+                DragDropManager.SetGhostIconPosition(evt.position);
+
+                DragDropManager.GhostIcon.style.backgroundImage = slotUI.BaseSprite.texture;
+                slotUI.IconImage.image = null;
+                slotUI.StackLabel.visible = false;
+
+                // UIManager.Instance.GhostIcon.style.opacity = 0.8f;
+                DragDropManager.GhostIcon.style.visibility = Visibility.Visible;
+
+                DragDropManager.GhostIcon.CapturePointer(evt.pointerId);
+            }
+        }
 
         protected override void OnDisable()
         {

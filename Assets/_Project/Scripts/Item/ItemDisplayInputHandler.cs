@@ -1,4 +1,6 @@
+using System;
 using _Project.Scripts.InputSystem;
+using _Project.Scripts.UI;
 using UnityEngine;
 
 namespace _Project.Scripts.Item
@@ -10,6 +12,13 @@ namespace _Project.Scripts.Item
         public InputGameplayReader InputGamePlay { get; set; }
         IItemUser itemUser;
         ItemDisplayBehavior itemDisplayBehavior;
+        
+        #region UIInteract
+        
+        private const string ButtonTypeInteract = "T";
+        private const string ContentInteract = "Pick up";
+        
+        #endregion
 
         void Awake()
         {
@@ -27,6 +36,7 @@ namespace _Project.Scripts.Item
             itemUser = interactor;
             if (itemUser != null)
                 InputGamePlay.PickupItem += PickUpItem;
+            UIManager.Instance.TurnOnInteractInfo(ButtonTypeInteract, ContentInteract);
         }
 
         public void Unsubscribe(IItemUser interactor)
@@ -34,6 +44,8 @@ namespace _Project.Scripts.Item
             if (itemUser != null)
                 InputGamePlay.PickupItem -= PickUpItem;
             itemUser = null;
+            
+            UIManager.Instance.TurnOffInteractInfo();
         }
 
         void PickUpItem()
@@ -45,6 +57,7 @@ namespace _Project.Scripts.Item
             );
 
             InputGamePlay.PickupItem -= PickUpItem;
+            UIManager.Instance.TurnOffInteractInfo();
         }
     }
 }

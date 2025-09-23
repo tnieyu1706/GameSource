@@ -21,6 +21,8 @@ namespace _Project.Scripts.UI
         [SerializeField] private List<UIDisplayModeData> displayDatas;
         [FoldoutGroup("Global")]
         [SerializeField, Required] private GameObject inventoryObject;
+
+        [SerializeField, Required] private InteractInfo interactInfo;
         
         public InputUIReader InputUI { get; set; }
         
@@ -105,6 +107,17 @@ namespace _Project.Scripts.UI
             _root = uiDocument.rootVisualElement;
             _root.Clear();
             _root.styleSheets.Add(globalStyleSheet);
+        }
+
+        public void TurnOnInteractInfo(string interactKey, string content)
+        {
+            interactInfo.gameObject.SetActive(true);
+            interactInfo.SetInteractInfo(interactKey, content);
+        }
+
+        public void TurnOffInteractInfo()
+        {
+            interactInfo.gameObject.SetActive(false);
         }
     }
 }

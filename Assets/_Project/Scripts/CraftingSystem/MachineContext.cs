@@ -5,6 +5,7 @@ using _Project.Scripts.Config;
 using _Project.Scripts.General.Patterns.Builder;
 using _Project.Scripts.General.StaticHelpers;
 using _Project.Scripts.Item;
+using _Project.Scripts.UI;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -141,7 +142,13 @@ namespace _Project.Scripts.CraftingSystem
 
         public ProgressingType ProgressingType => progressingType;
         public MachineType MachineType => machineType;
+        
+        #region UIInteract
 
+        private const string ButtonTypeInteract = "E";
+        private const string ContentInteract = "Interact";
+        
+        #endregion
         public float ProgressScale
         {
             get => progressScale;
@@ -295,12 +302,15 @@ namespace _Project.Scripts.CraftingSystem
         {
             CurrentItemUser = interactor;
             CurrentState?.SubscribeInteraction();
+            UIManager.Instance.TurnOnInteractInfo(ButtonTypeInteract, ContentInteract);
         }
 
         public void Unsubscribe(IItemUser interactor)
         {
             CurrentState?.UnsubscribeInteraction();
             CurrentItemUser = null;
+            UIManager.Instance.TurnOffInteractInfo();
         }
+
     }
 }
